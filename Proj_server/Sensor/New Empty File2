@@ -1,0 +1,17 @@
+[root@incognito-pc incognito]# diff /tmp/mod_before.txt  /tmp/mod_after.txt 
+15c15
+< uvcvideo               90112  0
+---
+> uvcvideo               90112  1
+20c20
+< videodev              139264  3 uvcvideo,v4l2_common,videobuf2_core
+---
+> videodev              139264  4 uvcvideo,v4l2_common,videobuf2_core
+40c40
+< radeon               1589248  8
+---
+> radeon               1589248  9
+61c61
+< drm                   286720  11 ttm,drm_kms_helper,radeon
+---
+> drm                   286720  12 ttm,drm_kms_helper,radeon

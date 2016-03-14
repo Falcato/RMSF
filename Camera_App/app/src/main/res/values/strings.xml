@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">Camera_App</string>
-    <string name="next_page">Next Page</string>
-    <string name="main_text">Click to move the camera</string>
-    <string name="left">left</string>
-    <string name="right">right</string>
-    <string name="up">up</string>
-    <string name="down">down</string>
-</resources>

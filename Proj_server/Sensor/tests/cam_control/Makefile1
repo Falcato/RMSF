@@ -1,0 +1,26 @@
+# $Id: Makefile 574 2011-09-02 17:04:42Z jose.goncalves $
+
+SRC        = $(shell find -maxdepth 1 -name "cam_control.c" -printf "%f ")
+OBJS       = $(SRC:.c=.o)
+PROG       = cam_control
+
+include ../../Rules.make
+
+CPPFLAGS  += -I../../v4l2_control
+LDFLAGS   += -L../../v4l2_control
+LDLIBS    += -lv4l2_control
+
+all: $(PROG)
+
+$(PROG): $(OBJS)
+	$(CC) $(LDFLAGS) $^ $(LDLIBS) -o $@
+
+install: all
+	$(INSTALL) -d -m 755 $(BIN_DIR)
+	$(INSTALL) -m 755 $(PROG) $(BIN_DIR)
+	$(STRIP) $(BIN_DIR)/$(PROG)
+
+clean:
+	$(RM) *.o *~ *.bak
+	$(RM) $(PROG)
+
